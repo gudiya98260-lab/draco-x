@@ -31,3 +31,36 @@ const satellites = [
 ];
 
 console.log("Satellite Database Loaded:", satellites);
+
+
+// DRACO-X Satellite Tracker Module
+
+async function trackISS() {
+    try {
+        const response = await fetch(
+            "https://api.wheretheiss.at/v1/satellites/25544"
+        );
+
+        const data = await response.json();
+
+        console.log("ISS Live Data:", data);
+
+        const satelliteInfo = document.getElementById("satellite-info");
+
+        if (satelliteInfo) {
+            satelliteInfo.innerHTML = `
+                <h3>🛰️ ISS Tracker</h3>
+                <p>Latitude: ${data.latitude}</p>
+                <p>Longitude: ${data.longitude}</p>
+                <p>Altitude: ${data.altitude} km</p>
+            `;
+        }
+
+    } catch (error) {
+        console.log("Satellite Connection Error:", error);
+    }
+}
+
+trackISS();
+
+setInterval(trackISS, 5000);
