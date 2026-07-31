@@ -1,0 +1,28 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050816;
+    color:white;
+    font-family:Arial, sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+h1{
+    font-size:3rem;
+    color:#00e5ff;
+    text-shadow:0 0 20px #00e5ff;
+}
+
+p{
+    margin-top:15px;
+    font-size:1.2rem;
+    color:#b8c5ff;
+      }
